@@ -25,6 +25,18 @@ def albums(artist):
     return result
 
 
+@route('/albums')
+def albums():
+    return '''
+        <form action="/albums/add" method="post">
+            Год <input name="year" type="text" />
+            Артист <input name="artist" type="text" />
+            Жанр <input name="genre" type="text" />
+            Альбом <input name="album" type="text" />
+            <input value="Сохранить" type="submit" />
+        </form>
+    '''
+
 @route("/albums/add", method="POST")
 def albums_add():
     """
