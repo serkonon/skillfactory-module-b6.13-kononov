@@ -28,7 +28,7 @@ def albums(artist):
 @route('/albums')
 def albums():
     return '''
-        <form action="/albums/add" method="post">
+        <form action="/albums" method="post">
             Год <input name="year" type="text" />
             Артист <input name="artist" type="text" />
             Жанр <input name="genre" type="text" />
@@ -37,7 +37,7 @@ def albums():
         </form>
     '''
 
-@route("/albums/add", method="POST")
+@route("/albums", method="POST")
 def albums_add():
     """
     Получает данные альбома методом POST и если нет такого
